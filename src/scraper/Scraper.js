@@ -27,9 +27,11 @@ const parseRecipe = (html) => {
       .each(function (i, e) {
         ingredients[i] = $(this)
           .text()
-          .replace(/\r?\n|\r/g, ' ')
+          .replace(/\r?\n|\r/g, ' ') // remove carriage returns
+          .replace(/[^\x00-\x7F]/g, '') // remove non-ascii characters
         ingredients[i] = ingredients[i].trim()
       })
+    // Find and store all list elements with instruction in class name
     $('*[class*="instruction"]')
       .find('li')
       .each(function (i, e) {
@@ -43,9 +45,4 @@ const parseRecipe = (html) => {
       instructions,
     }
   }
-
-  // const ingredients = $('*[class*="ingredient"]').find('li')
-  // ingredients.each(function (i, e) {
-  //   console.log($(this).text())
-  // })
 }
