@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import InputForm from './components/forms/InputForm'
+import Footer from './components/layout/Footer'
 
 function App() {
+  const [receipData, setRecipeData] = useState({
+    ingredients: [],
+    instructions: [],
+  })
+
+  const pullData = (data) => {
+    setRecipeData({
+      ingredients: data.ingredients,
+      instructions: data.instructions,
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main className='h-screen flex flex-col bg-right-bottom md:bg-center'>
+      <Router>
+        <InputForm pullData={pullData} />
+        <Footer />
+      </Router>
+    </main>
+  )
 }
 
-export default App;
+export default App
