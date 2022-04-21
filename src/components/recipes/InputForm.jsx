@@ -12,7 +12,7 @@ function InputForm({ pullData }) {
   }
 
   return (
-    <div className='container mx-auto grow flex justify-center content-center items-center'>
+    <div className='container mx-auto flex justify-center content-center items-center'>
       <form onSubmit={onSubmit}>
         <div className='container mx-auto text-center flex'>
           <div className='input-group'>

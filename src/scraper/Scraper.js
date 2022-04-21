@@ -17,6 +17,15 @@ export const scrapeURL = async (url) => {
 const parseRecipe = (html) => {
   const $ = cheerio.load(`${html}`)
 
+  // Select h1 element with heading or title classname
+  let title
+  if ($('h1[class*="heading"]').text() !== '') {
+    title = $('h1[class*="heading"]').text()
+  } else if ($('h1[class*="title"]').text() !== '') {
+    console.log('inside else if')
+    title = $('h1[class*="title"]').text()
+  }
+
   // Check for word press classes
   if ($('*[class*="wprm"]').text() !== '') {
     let ingredients = []
@@ -43,6 +52,7 @@ const parseRecipe = (html) => {
     return {
       ingredients,
       instructions,
+      title,
     }
   }
 }

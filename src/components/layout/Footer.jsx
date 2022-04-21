@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <footer className='footer grow-0 justify-between bg-slate-200 p-4 justify-self-end'>
+    <footer className='footer grow-0 justify-between bg-slate-200 p-4 self-end justify-self-end'>
       <Link to='/about'>About this project</Link>
       <div className='flex md:place-self-center md:justify-self-end'>
         <a
