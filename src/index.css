@@ -7,7 +7,6 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.loading {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
 }
