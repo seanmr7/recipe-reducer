@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 main {
-  background-image: url('./assets//images/background-image.jpg');
+  background-image: url('./assets//images/background-image.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,6 +34,16 @@ main {
   }
 }
 
+[data-theme='emerald'] .btn {
+  background-color: #5bb77c;
+  border-color: #5bb77c;
+}
+
+[data-theme='emerald'] .btn:hover {
+  background-color: #3d7a52;
+  border-color: #3d7a52;
+}
+
 .form-input {
   height: 3rem;
   padding: 0 1rem 0 1rem;
@@ -44,6 +54,6 @@ main {
 
 .input:focus {
   outline-style: none;
-  border-color: #66cc8a;
+  border-color: #5bb77c;
   border-width: 2px;
 }

@@ -28,13 +28,15 @@ function Results({ title, ingredients, instructions, url }) {
           </ul>
         </div>
       </div>
-      <a
-        href={`${url}`}
-        className='text-stone-900 text-center p-1'
-        target='_blank'
-        rel='noreferrer'>
-        To original recipe
-      </a>
+      <div className='w-full text-center'>
+        <a
+          href={`${url}`}
+          className='text-stone-900 p-1 w-content'
+          target='_blank'
+          rel='noreferrer'>
+          To original recipe
+        </a>
+      </div>
     </>
   )
 }

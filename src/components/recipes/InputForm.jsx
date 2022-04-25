@@ -25,7 +25,7 @@ function InputForm({ submitAndDisplay }) {
     <div className='container mx-auto flex justify-center content-center items-center my-8 overflow-x-hidden'>
       <form onSubmit={onSubmit}>
         <div className='container mx-auto text-center flex'>
-          <div className='form-control mx-2'>
+          <div className='form-control mx-1'>
             <input
               type='text'
               id='url'
@@ -36,7 +36,7 @@ function InputForm({ submitAndDisplay }) {
               required
             />
           </div>
-          <input type='submit' className='btn btn-primary text-slate-100' />
+          <input type='submit' className='btn text-slate-100 mx-1' />
         </div>
       </form>
     </div>
