@@ -25,17 +25,18 @@ function InputForm({ submitAndDisplay }) {
     <div className='container mx-auto flex justify-center content-center items-center my-8 overflow-x-hidden'>
       <form onSubmit={onSubmit}>
         <div className='container mx-auto text-center flex'>
-          <div className='input-group'>
+          <div className='form-control mx-2'>
             <input
               type='text'
               id='url'
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder='Recipe url'
-              className='input'
+              className='input input-bordered w-full max-w-xs'
+              required
             />
-            <input type='submit' className='btn btn-primary' />
           </div>
+          <input type='submit' className='btn btn-primary text-slate-100' />
         </div>
       </form>
     </div>

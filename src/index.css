@@ -10,3 +10,40 @@ main {
   overflow-x: hidden !important;
   max-width: 100% !important;
 }
+
+.fade-in {
+  -webkit-animation: fadein 0.25s linear forwards;
+  animation: fadein 0.25s linear forwards;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.form-input {
+  height: 3rem;
+  padding: 0 1rem 0 1rem;
+  font-size: 0.875rem;
+  line-height: 2;
+  border-radius: var(--rounded-btn, 0.5rem);
+}
+
+.input:focus {
+  outline-style: none;
+  border-color: #66cc8a;
+  border-width: 2px;
+}

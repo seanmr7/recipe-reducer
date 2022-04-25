@@ -7,7 +7,7 @@ function Results({ title, ingredients, instructions, url }) {
 
   return (
     <>
-      <div className='max-w-full font-medium my-10 p-5 container w-11/12 mx-auto bg-slate-100/80 text-stone-900 h-1/2 rounded-lg overflow-hidden'>
+      <div className='bg-slate-100/80 container fade-in font-medium h-1/2 max-w-full my-10 mx-auto overflow-hidden p-5 rounded-lg text-stone-900 w-11/12'>
         <h1 className='font-semibold text-2xl text-center font-bold mb-2'>{title}</h1>
         <div className='mx-auto lg:w-3/4'>
           <h1 className='font-semibold w-3/4 text-2xl mb-2'>Ingredients</h1>

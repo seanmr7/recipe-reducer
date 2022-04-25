@@ -2,9 +2,9 @@ import * as cheerio from 'cheerio'
 import * as scrapers from './ScraperFunctions'
 
 export const scrapeData = async (url) => {
-  const response = await fetch(
-    `https://api.allorigins.win/get?url=${encodeURIComponent(`${url}`)}`
-  )
+  const corsProxy = process.env.REACT_APP_CORS_PROXY
+
+  const response = await fetch(`${corsProxy}get?url=${encodeURIComponent(`${url}`)}`)
 
   if (response.ok) {
     const res = await response.json().then((data) => parseRecipe(data.contents, url))
