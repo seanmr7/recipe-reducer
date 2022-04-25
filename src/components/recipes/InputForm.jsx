@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { scrapeURL } from '../../scraper/Scraper'
+import { scrapeData } from '../../scraper/Scraper'
 
 function InputForm({ submitAndDisplay }) {
   const [url, setUrl] = useState('')
@@ -8,8 +8,7 @@ function InputForm({ submitAndDisplay }) {
     e.preventDefault()
 
     // Scrape ingredients and instructions from the url
-    const parsedData = await scrapeURL(url)
-
+    const parsedData = await scrapeData(url)
     // Add url to the data object
     parsedData.url = url
 

@@ -12,16 +12,20 @@ function App() {
     instructions: [],
   })
 
-  const [showForm, setShowForm] = useState(true)
   const [displayResults, setDisplayResults] = useState(false)
   const [loading, setLoading] = useState(false)
 
   const submitAndDisplay = (data) => {
+    if (displayResults) {
+      setDisplayResults(false)
+    }
+
     setRecipeData({
       title: data.title,
       ingredients: data.ingredients,
       instructions: data.instructions,
     })
+
     setLoading(true)
     setTimeout(function () {
       setDisplayResults(true)
@@ -42,7 +46,7 @@ function App() {
             />
           )}
           {loading && <Loading />}
-          {showForm && <InputForm submitAndDisplay={submitAndDisplay} />}
+          <InputForm submitAndDisplay={submitAndDisplay} />
         </div>
         <Footer />
       </Router>
