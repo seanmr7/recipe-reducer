@@ -38,6 +38,10 @@ const parseRecipe = (html, url) => {
         instructions[i] = step.replace(`Step ${i + 1}`, '')
       })
       break
+    case 'bonappetit.com':
+      scrapers.scrapeIngredients($, ingredients, 'div', 'List-XYTyX')
+      scrapers.scrapeInstructions($, instructions, 'p', 'InstructionBody')
+      break
     case 'delish.com':
       scrapers.scrapeIngredients($, ingredients, 'div', 'ingredient-lists')
       scrapers.scrapeInstructions($, instructions, 'li', 'direction-lists')

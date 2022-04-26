@@ -18,6 +18,7 @@ function Main() {
     if (displayResults) {
       setDisplayResults(false)
     }
+    setLoading(true)
 
     setRecipeData({
       title: data.title,
@@ -26,11 +27,8 @@ function Main() {
       url: data.url,
     })
 
-    setLoading(true)
-    setTimeout(function () {
-      setDisplayResults(true)
-      setLoading(false)
-    }, 2000)
+    setDisplayResults(true)
+    setLoading(false)
   }
   return (
     <>
